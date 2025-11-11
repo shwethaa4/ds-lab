@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
-
 #define MAX 10
 
 int deque[MAX];
@@ -15,7 +13,7 @@ void display(void);
 int main()
 {
     int choice;
-    clrscr();
+   
     do
     {
         printf("\n--- DOUBLE ENDED QUEUE OPERATIONS ---");
@@ -48,11 +46,11 @@ int main()
         }
     } while (choice != 6);
 
-    getch();
+   
     return 0;
 }
 
-/* ------- INSERT AT RIGHT ------- */
+
 void insert_right()
 {
     int val;
@@ -65,7 +63,7 @@ void insert_right()
         return;
     }
 
-    if (left == -1) // queue is initially empty
+    if (left == -1)
     {
         left = 0;
         right = 0;
@@ -78,7 +76,7 @@ void insert_right()
     deque[right] = val;
 }
 
-/* ------- INSERT AT LEFT ------- */
+
 void insert_left()
 {
     int val;
@@ -91,7 +89,7 @@ void insert_left()
         return;
     }
 
-    if (left == -1) // queue is initially empty
+    if (left == -1)
     {
         left = 0;
         right = 0;
@@ -104,7 +102,7 @@ void insert_left()
     deque[left] = val;
 }
 
-/* ------- DELETE FROM RIGHT ------- */
+
 void delete_right()
 {
     if (left == -1)
@@ -115,7 +113,7 @@ void delete_right()
 
     printf("\nThe deleted element is %d", deque[right]);
 
-    if (left == right) // only one element
+    if (left == right)
     {
         left = -1;
         right = -1;
@@ -126,7 +124,7 @@ void delete_right()
         right = right - 1;
 }
 
-/* ------- DELETE FROM LEFT ------- */
+
 void delete_left()
 {
     if (left == -1)
@@ -137,7 +135,7 @@ void delete_left()
 
     printf("\nThe deleted element is %d", deque[left]);
 
-    if (left == right) // only one element
+    if (left == right)
     {
         left = -1;
         right = -1;
@@ -148,7 +146,7 @@ void delete_left()
         left = left + 1;
 }
 
-/* ------- DISPLAY ------- */
+
 void display()
 {
     int front = left;
